@@ -1,0 +1,23 @@
+@media(max-width: 375px)
+{
+    .special-btn
+    {
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+
+    main
+    {
+        .calculator
+        {
+            .calculator-buttons
+            {
+                .container
+                {
+                    gap:7px;
+                }
+            }
+        }
+    }
+
+}

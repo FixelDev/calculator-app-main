@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
+
+    <title>Frontend Mentor | Calculator app</title>
+</head>
+<body>
+    <main class="flex content-center">
+        <div class="container flex content-center">
+            <div class="calculator">
+                <div class="calculator-header flex">
+                    <h1 class="title">calc</h1>
+                    <div class="theme-controls flex">
+                        <h2 class="title">theme</h2>
+                        <div class="three-state-switch">
+                            <div class="label-group flex">
+                                <label for="first-theme-radio">1</label>
+                                <label for="second-theme-radio">2</label>
+                                <label for="third-theme-radio">3</label>
+                            </div>
+                            
+                            <div class="radio-group flex">
+                                <label class="radio-container">
+                                    <input type="radio" id="first-theme-radio" name="radio-group" checked>
+                                    <span class="checkmark"></span>
+                                </label>
+    
+                                <label class="radio-container">
+                                    <input type="radio" id="second-theme-radio" name="radio-group">
+                                    <span class="checkmark"></span>
+                                </label>
+    
+                                <label class="radio-container">
+                                    <input type="radio" id="third-theme-radio" name="radio-group">
+                                    <span class="checkmark"></span>
+                                </label>                  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="calculator-display panel">
+                    <div class="container">
+                        <input type="text" readonly id="calculator-display-input">
+                    </div>
+                </div>
+    
+                <div class="calculator-buttons panel">
+                    <div class="container">
+                        <button class="btn">7</button>
+                        <button class="btn">8</button>
+                        <button class="btn">9</button>
+                        <button class="special-btn" id="delete-btn">del</button>
+                        <button class="btn">4</button>
+                        <button class="btn">5</button>
+                        <button class="btn">6</button>
+                        <button class="math-operator-btn">+</button>
+                        <button class="btn">1</button>
+                        <button class="btn">2</button>
+                        <button class="btn">3</button>
+                        <button class="math-operator-btn">-</button>
+                        <button class="dot-btn">.</button>
+                        <button class="btn">0</button>
+                        <button class="math-operator-btn">/</button>
+                        <button class="math-operator-btn">x</button>
+                        <button class="special-btn" id="reset-btn">reset</button>
+                        <button class="special-btn" id="equals-btn">=</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+    <!-- <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
