@@ -1,0 +1,83 @@
+@for $i from 1 through 3
+{
+    body.th#{$i}
+    {
+        background-color: map-get($themes, th#{$i}-main-background);
+    }
+    
+    .title.th#{$i}
+    {
+        color: map-get($themes, th#{$i}-text-secondary);
+    } 
+    
+    .calculator-display.th#{$i}
+    {
+        background-color:  map-get($themes, th#{$i}-screen-background);
+    }
+    
+    .calculator-buttons.th#{$i}
+    {
+        background-color: map-get($themes, th#{$i}-toggle-background);
+    }
+    
+    .btn.th#{$i}
+    {
+        color: map-get($themes, th#{$i}-text-primary);
+        background-color: map-get($themes, th#{$i}-btn-primary-background);
+        border-bottom-color: map-get($themes, th#{$i}-btn-primary-shadow); 
+    }
+    
+    .btn.th#{$i}:hover
+    {
+        background-color: lighten(map-get($themes, th#{$i}-btn-primary-background), 15%);
+    }
+    
+    .radio-group.th#{$i}
+    {
+        background-color: map-get($themes, th#{$i}-toggle-background);
+    }
+    
+    input:checked ~ .checkmark.th#{$i}
+    {
+        background-color: map-get($themes, th#{$i}-btn-special-background);
+    }
+    
+    .radio-container:hover input:checked ~ .checkmark.th#{$i}
+    {
+        background-color: lighten(map-get($themes, th#{$i}-btn-special-background), 15%);
+    }
+
+    .label-group label.th#{$i}
+    {
+        color: map-get($themes, th#{$i}-text-secondary);
+    }
+    
+    #delete-btn.th#{$i}, #reset-btn.th#{$i}
+    {
+        background-color: map-get($themes, th#{$i}-btn-secondary-background);
+        border-bottom-color: map-get($themes, th#{$i}-btn-secondary-shadow);
+        color: #fff;
+    }
+    
+    #delete-btn.th#{$i}:hover, #reset-btn.th#{$i}:hover
+    {
+        background-color: lighten(map-get($themes, th#{$i}-btn-secondary-background), 15%);
+    }
+    
+    #equals-btn.th#{$i}
+    {
+        background-color: map-get($themes, th#{$i}-btn-special-background);
+        border-bottom-color: map-get($themes, th#{$i}-btn-special-shadow);
+        color: map-get($themes, th#{$i}-text-special);
+    }
+    
+    #equals-btn.th#{$i}:hover
+    {
+        background-color: lighten(map-get($themes, th#{$i}-btn-special-background), 15%);
+    }
+
+    #calculator-display-input.th#{$i}
+    {
+        color: map-get($themes, th#{$i}-text-secondary);
+    }
+}

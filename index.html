@@ -12,67 +12,67 @@
 
     <title>Frontend Mentor | Calculator app</title>
 </head>
-<body>
+<body class="theme-changeable">
     <main class="flex content-center">
         <div class="container flex content-center">
             <div class="calculator">
                 <div class="calculator-header flex">
-                    <h1 class="title">calc</h1>
+                    <h1 class="title theme-changeable">calc</h1>
                     <div class="theme-controls flex">
-                        <h2 class="title">theme</h2>
+                        <h2 class="title theme-changeable">theme</h2>
                         <div class="three-state-switch">
                             <div class="label-group flex">
-                                <label for="first-theme-radio">1</label>
-                                <label for="second-theme-radio">2</label>
-                                <label for="third-theme-radio">3</label>
+                                <label class="theme-changeable" for="first-theme-radio">1</label>
+                                <label class="theme-changeable" for="second-theme-radio">2</label>
+                                <label class="theme-changeable" for="third-theme-radio">3</label>
                             </div>
                             
-                            <div class="radio-group flex">
+                            <div class="radio-group flex theme-changeable">
                                 <label class="radio-container">
-                                    <input type="radio" id="first-theme-radio" name="radio-group" checked>
-                                    <span class="checkmark"></span>
+                                    <input type="radio" id="first-theme-radio" name="radio-group" value="th1" checked>
+                                    <span class="checkmark theme-changeable"></span>
                                 </label>
     
                                 <label class="radio-container">
-                                    <input type="radio" id="second-theme-radio" name="radio-group">
-                                    <span class="checkmark"></span>
+                                    <input type="radio" id="second-theme-radio" name="radio-group" value="th2">
+                                    <span class="checkmark theme-changeable"></span>
                                 </label>
     
                                 <label class="radio-container">
-                                    <input type="radio" id="third-theme-radio" name="radio-group">
-                                    <span class="checkmark"></span>
+                                    <input type="radio" id="third-theme-radio" name="radio-group" value="th3">
+                                    <span class="checkmark theme-changeable"></span>
                                 </label>                  
                             </div>
                         </div>
                     </div>
                 </div>
     
-                <div class="calculator-display panel">
+                <div class="calculator-display panel theme-changeable">
                     <div class="container">
-                        <input type="text" readonly id="calculator-display-input">
+                        <input type="text" readonly id="calculator-display-input" class="theme-changeable">
                     </div>
                 </div>
     
-                <div class="calculator-buttons panel">
+                <div class="calculator-buttons panel theme-changeable">
                     <div class="container">
-                        <button class="btn">7</button>
-                        <button class="btn">8</button>
-                        <button class="btn">9</button>
-                        <button class="special-btn" id="delete-btn">del</button>
-                        <button class="btn">4</button>
-                        <button class="btn">5</button>
-                        <button class="btn">6</button>
-                        <button class="math-operator-btn">+</button>
-                        <button class="btn">1</button>
-                        <button class="btn">2</button>
-                        <button class="btn">3</button>
-                        <button class="math-operator-btn">-</button>
-                        <button class="dot-btn">.</button>
-                        <button class="btn">0</button>
-                        <button class="math-operator-btn">/</button>
-                        <button class="math-operator-btn">x</button>
-                        <button class="special-btn" id="reset-btn">reset</button>
-                        <button class="special-btn" id="equals-btn">=</button>
+                        <button class="btn theme-changeable">7</button>
+                        <button class="btn theme-changeable">8</button>
+                        <button class="btn theme-changeable">9</button>
+                        <button class="special-btn theme-changeable" id="delete-btn">del</button>
+                        <button class="btn theme-changeable">4</button>
+                        <button class="btn theme-changeable">5</button>
+                        <button class="btn theme-changeable">6</button>
+                        <button class="math-operator-btn theme-changeable">+</button>
+                        <button class="btn theme-changeable">1</button>
+                        <button class="btn theme-changeable">2</button>
+                        <button class="btn theme-changeable">3</button>
+                        <button class="math-operator-btn theme-changeable">-</button>
+                        <button class="dot-btn theme-changeable">.</button>
+                        <button class="btn theme-changeable">0</button>
+                        <button class="math-operator-btn theme-changeable">/</button>
+                        <button class="math-operator-btn theme-changeable">x</button>
+                        <button class="special-btn theme-changeable" id="reset-btn">reset</button>
+                        <button class="special-btn theme-changeable" id="equals-btn">=</button>
                     </div>
                 </div>
             </div>
@@ -85,5 +85,6 @@
         Coded by <a href="#">Your Name Here</a>.
     </div> -->
     <script type="module" src="js/main.js"></script>
+    <script src="js/theme.js"></script>
 </body>
 </html>
