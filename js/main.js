@@ -3,12 +3,7 @@ import {Parser} from '../node_modules/expr-eval/dist/index.mjs';
 const calculatorDisplay = document.querySelector('#calculator-display-input');
 const parser = new Parser();
 
-let usedNumbers = [];
-let currentNumberIndex = 0;
-let expression = '';
-
-let wasMathOperatorPreviouslyChosen = false;
-
+let expressionArray = [];
 
 document.querySelectorAll('.btn').forEach(button => 
 {
@@ -28,19 +23,26 @@ document.querySelector('#reset-btn').addEventListener('click', reset);
 
 document.querySelector('#delete-btn').addEventListener('click', deleteLastSymbol);
 
+
 function addClickedNumberToCalculations(number)
 {
-    usedNumbers[currentNumberIndex] += number;
-    expression += number;
+    checkIfExpressionContainsErrors();
 
-    wasMathOperatorPreviouslyChosen = false;
-    
+    if(expressionArray[getCurrentExpressionElementIndex()] == null || isNaN(expressionArray[getCurrentExpressionElementIndex()] ))
+        expressionArray.push(number);
+    else
+        expressionArray[getCurrentExpressionElementIndex()] += number;
+
+
     display();
 }
 
-function display()
+function checkIfExpressionContainsErrors()
 {
-    calculatorDisplay.value = expression;
+    if(expressionArray[getCurrentExpressionElementIndex()] == 'ERR' || expressionArray[getCurrentExpressionElementIndex()] == 'Infinity')
+    {
+        reset();
+    }
 }
 
 function chooseMathOperator(mathOperator)
@@ -48,23 +50,21 @@ function chooseMathOperator(mathOperator)
     if(mathOperator === 'x')
         mathOperator = '*';
 
-    if(wasMathOperatorPreviouslyChosen)
+    if(isNaN(expressionArray[getCurrentExpressionElementIndex()]))
     {
-        expression = expression.slice(0, -1) + mathOperator;
+        expressionArray[getCurrentExpressionElementIndex()] = mathOperator;
     }
     else
     {
-        expression += mathOperator;
-        currentNumberIndex++;
+        expressionArray.push(mathOperator);
     }
- 
-    wasMathOperatorPreviouslyChosen = true;
+
     display();
 }
 
 function createFloatNumber()
 {
-    if(usedNumbers[currentNumberIndex].includes('.'))
+    if(expressionArray[getCurrentExpressionElementIndex()].includes('.'))
         return;
 
     addClickedNumberToCalculations('.');
@@ -72,31 +72,56 @@ function createFloatNumber()
 
 function calculate()
 {
-    if(expression === '')
-        return;
+    let expression = '';
 
-    expression = parser.parse(expression).evaluate();
-    usedNumbers = [];
-    usedNumbers.push(expression);
-    currentNumberIndex = 0;
-    display();
+    try
+    {
+        expression = parser.parse(expressionArray.join('')).evaluate().toString();
+    }
+    catch(err)
+    {
+        expression = 'ERR';
+    }
+
+
+    clearExpressionArray();
+    addClickedNumberToCalculations(expression);
+
 }
 
 function reset()
 {
-    expression = '';
-    currentNumberIndex = 0;
-    usedNumbers = [];
-
+    clearExpressionArray();
     display();
 }
 
 function deleteLastSymbol()
-{
-    expression = expression.slice(0, -1);
+{   
+    if(expressionArray.length === 0)
+        return;
 
-    if(wasMathOperatorPreviouslyChosen)
-        wasMathOperatorPreviouslyChosen = false;
+    expressionArray[getCurrentExpressionElementIndex()] = expressionArray[getCurrentExpressionElementIndex()].slice(0, -1);
+
+    if(expressionArray[getCurrentExpressionElementIndex()] == '')
+    {
+        expressionArray.pop();
+    }
+        
 
     display();
+}
+
+function display()
+{
+    calculatorDisplay.value = expressionArray.join('');
+}
+
+function clearExpressionArray()
+{
+    expressionArray = [];
+}
+
+function getCurrentExpressionElementIndex()
+{
+    return expressionArray.length - 1;
 }
