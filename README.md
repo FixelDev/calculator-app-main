@@ -2,26 +2,11 @@
 
 This is a solution to the [Calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Table of contents
-
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-
 ## Overview
 
 ### The challenge
 
-Users are be able to:
+Users are able to:
 
 - See the size of the elements adjust based on their device's screen size
 - Perform mathmatical operations like addition, subtraction, multiplication, and division
@@ -43,8 +28,8 @@ Users are be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: Add solution URL here](https://your-solution-url.com)
+- Live Site URL: https://fixeldev.github.io/calculator-app-main/
 
 ### Built with
 
@@ -52,7 +37,7 @@ Users are be able to:
 - SCSS
 - Flexbox
 - CSS Grid
-- JS library expr-eval [https://github.com/silentmatt/expr-eval]
+- JS library expr-eval https://github.com/silentmatt/expr-eval
 
 ### What I learned
 
@@ -62,11 +47,10 @@ Users are be able to:
 
 ### Useful resources
 
-- expr-eval(https://github.com/silentmatt/expr-eval) - This is the JS library which handles parsing strings into math expressions.
+- expr-eval: (https://github.com/silentmatt/expr-eval) - This is the JS library which handles parsing strings into math expressions.
 
 ## Author
 
-- Website - FixelDev(https://www.your-site.com)
 - Frontend Mentor - @FixelDev(https://www.frontendmentor.io/profile/yourusername)
 - Twitter - @FixelDev(https://www.twitter.com/yourusername)
 
