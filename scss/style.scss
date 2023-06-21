@@ -184,5 +184,15 @@ main
     
 }
 
+footer
+{
+    font-size: 1rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+}
+
 @import 'mobile';
 @import 'theme'; 
