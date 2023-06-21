@@ -1,4 +1,4 @@
-import {Parser} from '../modules/expr-eval/dist/index.mjs';
+import {Parser} from './modules/expr-eval/dist/index.mjs';
 
 const calculatorDisplay = document.querySelector('#calculator-display-input');
 const parser = new Parser();
